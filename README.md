@@ -13,5 +13,5 @@ Al procesar estos datos, la aplicación generará un asignación entre caballos 
 
 Este aplicación podrá ser usada por cualquier centro hípico ya que simplemente variará la lista de caballos y jinetes.
 
-* [Captura del fichero de configuración](Configuracion/clavepublica.png)
-* [Captura de la clave pública](Configuracion/configuracion.png)
+* [Captura del fichero de configuración](Configuracion/configuracion.png)
+* [Captura de la clave pública](Configuracion/clavepublica.png)
