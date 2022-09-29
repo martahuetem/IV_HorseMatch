@@ -1,7 +1,7 @@
 # IV_HorseMatch
 
 
-El problema que pretende resolver mi aplicación la asignación más optima posible de caballos a alumnos en un centro hípico.
+El problema que pretende resolver mi aplicación la asignación más óptima posible de caballos a alumnos en un centro hípico.
 
 Para el desarrollo de esta aplicación se va a tener en cuenta el carácter y las posibilidades de un caballo así como el nivel y capacidades del alumno.
 
@@ -13,3 +13,5 @@ Al procesar estos datos, la aplicación generará un asignación entre caballos 
 
 Este aplicación podrá ser usada por cualquier centro hípico ya que simplemente variará la lista de caballos y jinetes.
 
+* [Captura del fichero de configuración](Configuracion/clavepublica.png)
+* [Captura de la clave pública](Configuracion/configuracion.png)
