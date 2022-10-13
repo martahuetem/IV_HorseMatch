@@ -1,8 +1,8 @@
 **Pablo**
 ------------
-Alumno del centro hípico. 
-Tiene 15 años y lleva montando desde los 7. 
-Tiene un nivel avanzado de equitación.
+Alumno del centro hípico. <br />
+Tiene 15 años y lleva montando desde los 7. <br />
+Tiene un nivel avanzado de equitación. <br />
 
 **Luisa**
 ------------
