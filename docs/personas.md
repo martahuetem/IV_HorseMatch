@@ -13,5 +13,5 @@ Lleva tratando con los caballos muchos años y le da mucha importancia a su desc
 ------------
 Alumna del centro hípico.
 Tiene 5 años y lleva montando solo un año. <br />
-Hace unos dias se cayó de un caballo que tenía más nivel que el que ella necesita. <br />
+Hace unos dias se cayó de un caballo que tenía más nivel que el que ella tiene. <br />
 Le ha pillado un poco de miedo y quiere un caballo que se adecue a su nivel. <br />
