@@ -1,3 +1,5 @@
+Historias de Usuario
+======
 [HU1] Laura (5 años), que monta en el club de Luisa, quiere un caballo que no le de miedo y del que no se vaya a caer. 
 ----------
 Laura, que se cayó de un caballo hace unos dias, necesita un caballo lo más adecuado a su nivel
