@@ -12,6 +12,6 @@ Diseño de una librería para obtener la información de la estructura de datos 
 -----
 Diseño e implementación del sistema de reparto de caballos. Con los datos del [M1] y con las librerías necesarias ([M2]) implementaremos un sistema que empareje caballo y jinete de la forma más adecuada posible teniendo en cuenta el nivel de ambos
 
-[M3] Diseño de la interfaz 
+[M3] Creacion de la API
 -----
-En esta fase se realizará el diseño de una interfaz que sea simple y fácil de gestionar por cualquier usuario adaptandola a cualquier nivel.
+Creación de un servicio web en el que se puedan realizar consultas simples tales como ver que caballos descansan el dia de hoy, que caballo se le ha asignado a cada alumno, ver que alumnos acuden a montar hoy....
