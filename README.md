@@ -15,6 +15,3 @@ Este aplicación podrá ser usada por cualquier centro hípico ya que simplement
 
 * [Captura del fichero de configuración](Configuracion/configuracion.png)
 * [Captura de la clave pública](Configuracion/clavepublica.png)
-
-**MILESTONES**
-* [Milestones](docs/milestones.md)
