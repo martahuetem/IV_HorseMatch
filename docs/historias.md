@@ -10,4 +10,4 @@ Luisa está preocupada por el bienestar de sus caballos y necesita saber que cab
 
 [HU3] Pablo, alumno del club hípico, no quiere quedarse sin caballo para montar el día que vaya 
 --------
-Pablo que va todos los miercoles, día en el que hay más afluencia) no quiere quedarse sin caballo.
+Pablo que va todos los miercoles, día en el que hay más afluencia no quiere quedarse sin caballo.
