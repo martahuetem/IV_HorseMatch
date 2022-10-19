@@ -6,7 +6,7 @@ Se necesitará tener el diseño del modelo de datos en el cual tendremos a los a
 
 [M1] Biblioteca necesarias para obtener la información de los caballos
 -----
-Diseño de una biblioteca para obtener la información de la estructura de datos detallada en [M0] y que nos permita la modificación, inserción... de los datos necesarios a dicha estructura de datos.
+Diseño de una biblioteca para obtener la información de la estructura de datos detallada en [M0].
 
 [M2] Implementación de la lógica de negocio
 -----
