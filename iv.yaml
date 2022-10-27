@@ -1,5 +1,4 @@
 lenguaje: node.js
 entidad:
-  	- Models/Jinete.js
-  	- Models/Caballo.js
-
+  - HorseMatch/Models/Jinete.js
+  - HorseMatch/Models/Caballo.js
