@@ -5,5 +5,6 @@ const Nivel = {
     Alto: "Alto",
 }
 
+
 module.exports = Nivel;
 
