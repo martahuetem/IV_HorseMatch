@@ -48,5 +48,4 @@ class Caballo{
     }
 }
 
-
 module.exports = Caballo;
