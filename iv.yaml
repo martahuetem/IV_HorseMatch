@@ -1,6 +1,5 @@
 ﻿lenguaje: node.js
 
-
 entidad:
   - Models/Jinete.js
   - Models/Caballo.js
