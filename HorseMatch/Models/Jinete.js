@@ -6,11 +6,13 @@ class Jinete{
      * @param {String} nombre Identificador del jinete 
      * @param {Nivel} nivel Nivel del jinete
      * @param {Array} listaCaballos Caballos montados por el jinete
+     * @param {boolean} tieneCaballo Jinete ya ha sido asignado a un Caballo o aún no.
      */
-    constructor(nombre, nivel, listaCaballos){
+    constructor(nombre, nivel, listaCaballos, tieneCaballo){
         this.nombre = nombre;
         this.nivel = nivel;
         this.listaCaballos = listaCaballos;
+        this.tieneCaballo = tieneCaballo;
     }
 
     /**
@@ -35,6 +37,14 @@ class Jinete{
     */
     getlistaCaballos(){
         return this.listaCaballos;
+    }
+
+    /**
+    * Método que devuelve si el jinete tiene un caballo asignado
+    * @returns {boolean}
+    */
+    gettieneCaballo(){
+        return this.tieneCaballo;
     }
 }
 
