@@ -5,8 +5,8 @@ class Caballo{
      * Constructor clase Caballo
      * @param {String} nombre Identificador del caballo 
      * @param {Nivel} nivel Nivel del caballo
-     * @param {boolean} descansado Caballo está descansado o no
-     * @param {boolean} tieneJinete Caballo ya ha sido asignado a un Jinete o aún no.
+     * @param {Boolean} descansado Caballo está descansado o no
+     * @param {Boolean} tieneJinete Caballo ya ha sido asignado a un Jinete o aún no.
      */
     constructor(nombre, nivel, descansado, tieneJinete){
         this.nombre = nombre;
@@ -33,7 +33,7 @@ class Caballo{
 
     /**
     * Método que devuelve si el caballo esta descansado o no
-    * @returns {boolean}
+    * @returns {Boolean}
     */
     getDescansado(){
         return this.descansado;
@@ -41,7 +41,7 @@ class Caballo{
 
     /**
     * Método que devuelve si el caballo tiene asignado un jinete
-    * @returns {boolean}
+    * @returns {Boolean}
     */
     getTieneJinete(){
         return this.tieneJinete;
