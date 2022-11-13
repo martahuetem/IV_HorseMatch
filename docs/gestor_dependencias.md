@@ -1,8 +1,8 @@
-**GESTOR DE DEPENDENCIAS**
+## **GESTOR DE DEPENDENCIAS**
 
 Los gestores de dependencias más utilizados para node.js son:
 
-* npm (Node Package Manager)
+## npm (Node Package Manager)
 Es un gestor de paquetes creado en lenguaje JAvaScript y es la parte esencial de Node.js.
 
 **Ventajas**
@@ -39,7 +39,7 @@ Yarn surgió como una propuesta para solucionar los problemas tanto de seguridad
 2. A veces falla a la hora de optimizar el espacio en disco.
 3. Es una pequeña mejora de npm pero la mayoría de cosas siguen funcionando igual.
 
-* pnpm
+## pnpm
 Es el remplazo de npm por lo que ha es mucho más rápido y eficiente que su predecesor.
 
 **Ventajas**
@@ -55,7 +55,7 @@ Es el remplazo de npm por lo que ha es mucho más rápido y eficiente que su pre
 1. No soporta, en un proncipio, los lock files de npm. Sin embargo, hay un comando que convierte los lock files de npm o yarn a pnpm.
 
 
-* ¿Cuál elijo?
+## ¿Cuál elijo?
 
 Una vez presentados el top 3 de los gestores de dependencias para node.js se debe de ver cuál es el que más se adecua a mi proyecto en función a los criterios de selección:
 
