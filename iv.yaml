@@ -1,0 +1,4 @@
+lenguaje: node.js
+
+entidad:
+  - src/caballo.js
