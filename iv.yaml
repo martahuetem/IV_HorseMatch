@@ -1,1 +1,7 @@
 ﻿lenguaje: node.js
+
+objeto valor:
+  - src/jinete.js
+
+entidad:
+  - src/caballo.js
