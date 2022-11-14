@@ -1,5 +1,0 @@
-﻿lenguaje: node.js
-
-entidad:
-  - src/jinete.js
-  - src/caballo.js
