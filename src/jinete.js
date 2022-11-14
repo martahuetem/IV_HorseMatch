@@ -1,3 +1,4 @@
+const Nivel = require("./nivel")
 
 /**
  * Declaración de la clase Jinete. Objeto-valor que contendrá información 
@@ -8,9 +9,11 @@ class Jinete{
     /**
      * Constructor clase Jinete
      * @param {String} nombre Identificador del jinete 
+     * @param {Nivel} nivel Nivel del jinete
      */
-    constructor(nombre){
+    constructor(nombre, nivel){
         this.nombre = nombre;
+        this.nivel = nivel;
     }
 
 }
