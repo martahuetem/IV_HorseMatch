@@ -1,8 +1,8 @@
 const Nivel = require("./nivel")
 
 /**
- * Declaración de la clase Jinete. Objeto-valor que contendrá información 
- * del jinete.
+ * Declaración de la clase Jinete. Objeto-valor (pues sus datos miembros no 
+ * variarán) que contendrá información del jinete.
  */
 
 class Jinete{
