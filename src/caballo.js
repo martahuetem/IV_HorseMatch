@@ -1,10 +1,10 @@
-const Nivel = require("./Nivel")
+const nivel = require("./nivel")
 
-class Caballo{
+class caballo{
     /**
-     * Constructor clase Caballo
+     * Constructor clase caballo
      * @param {String} nombre Identificador del caballo 
-     * @param {Nivel} nivel Nivel del caballo
+     * @param {nivel} nivel Nivel del caballo
      * @param {Boolean} descansado Caballo está descansado o no
      * @param {Boolean} tieneJinete Caballo ya ha sido asignado a un Jinete o aún no.
      */
@@ -17,4 +17,4 @@ class Caballo{
     
 }
 
-module.exports = Caballo;
+module.exports = caballo;
