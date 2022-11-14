@@ -1,0 +1,12 @@
+{
+  "name": "IV_HorseMatch",
+  "version": "1.0.0",
+  "description": "Proyecto de IV",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Marta Huete Martínez",
+  "license": "ISC"
+}
