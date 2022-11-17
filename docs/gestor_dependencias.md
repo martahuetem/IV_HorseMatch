@@ -21,7 +21,7 @@ Es un gestor de paquetes creado en lenguaje JAvaScript y es la parte esencial de
 2. Ha tenido algunos problemas de seguridad a lo largo de sus 10 años. Sin embargo, se han ido solucionando.
 3. Lento en cuanto a rendimiento y eficiencia de disco.
 
-* yarn
+## yarn
 
 Yarn surgió como una propuesta para solucionar los problemas tanto de seguridad como de consistencia y de rendimiento.
 
