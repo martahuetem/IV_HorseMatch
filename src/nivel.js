@@ -6,3 +6,4 @@ const Nivel = {
 }
 
 module.exports = Nivel;
+
