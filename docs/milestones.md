@@ -3,6 +3,7 @@ Milestones
 [M0] Fichero o ficheros con el modelo de datos
 -----
 Se necesitará tener el diseño del modelo de datos en el cual tendremos a los alumnos junto con sus datos y a el conjunto de caballos con su nivel y su información adicional.
+Abrá que tener en cuenta que se deberán que incluir las herramientas necesarias para la automatización de tareas.
 
 [M1] Biblioteca necesarias para obtener la información de los caballos
 -----
