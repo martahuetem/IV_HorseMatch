@@ -3,7 +3,7 @@
 Los gestores de dependencias más utilizados para node.js son:
 
 ## npm (Node Package Manager)
-Es un gestor de paquetes creado en lenguaje JAvaScript y es la parte esencial de Node.js.
+Es un gestor de paquetes creado en lenguaje JavaScript y es la parte esencial de Node.js.
 
 **Ventajas**
 
