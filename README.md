@@ -18,3 +18,5 @@ Este aplicación podrá ser usada por cualquier centro hípico ya que simplement
 
 * [Gestor de dependencias](docs/gestor_dependencias.md)
 * [Task Runner](docs/task_runner.md)
+* Orden Check
+Se hara uso de la orden **make check** o **make** para comprobar la sintaxis.
