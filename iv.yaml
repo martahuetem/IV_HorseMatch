@@ -6,3 +6,7 @@ entidad:
   - src/caballo.js
   - src/jinete.js
   - src/caballosDisponibles.js
+
+automatizar: 
+  fichero: makefile
+  orden: make
