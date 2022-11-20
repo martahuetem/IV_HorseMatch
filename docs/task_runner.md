@@ -2,6 +2,16 @@
 
 El Task Runner es una herramienta que automatiza tareas. Se busca la automatización de tareas repetitivas como compilar o pruebas unitarias.
 
+Para elegir el Task Runner voy a tener en cuenta los siguientes criterios:
+
+1. **Seguridad:** es uno de los criterios principales. Todo proyecto debe ser seguro.
+
+2. **Freshness:** es muy importante que el taks runner esté atualizado y que se actualice cada poco tiempo.
+
+3. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios. 
+
+4. **Velocidad:** se debe de tener en cuenta la velocidad de el gestor de tareas.
+
 ## Grunt
 
 Usa inicialmente una configuración en la que indicas las tareas que tendrás disponible para usar. Para cada tarea, se abren, se crean archivos temporales y se cierran los archivos. Por ello algunos optan por su uso.
@@ -67,11 +77,11 @@ make además de ser una herramienta para generar archivos de otros archivos (p.e
 
 Una vez presentados los taks runners más utilizados, toca elegir cuál se adecua más a mi proyecto siguiendo los criterios de selección.
 
-1. **Seguridad:** es uno de los criterios principales. En este caso, el más seguro sería make.
+1. **Seguridad:** En este caso, el más seguro sería make.
 
-2. **Freshness:** es muy importante que el taks runner esté atualizado y que se actualice cada poco tiempo. Todos cumplen este punto.
+2. **Freshness:** Todos cumplen este punto.
 
-3. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios. Las opiniones están divididas en cuanto a que task runner usar. Los dos a destacar son gulp y make.
+3. **Buenas prácticas:** Las opiniones están divididas en cuanto a que task runner usar. Los dos a destacar son gulp y make.
 
 4. **Velocidad:** el más rápido en este caso sería make.
 
