@@ -10,3 +10,4 @@ entidad:
 automatizar: 
   fichero: makefile
   orden: make
+  
