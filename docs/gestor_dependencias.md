@@ -35,10 +35,9 @@ Yarn surgió como una propuesta para solucionar los problemas tanto de seguridad
 
 **Ventajas**
 
-1. Tiene soporte para monorepo.
-2. Es muy seguro desde sus inicios.
-3. Muy usado en los proyectos de proyectos de código abierto. 
-4. Es más rápido que npm en cuanto a rendimiento y eficiencia de disco.
+1. Es muy seguro desde sus inicios.
+2. Muy usado en los proyectos de proyectos de código abierto. 
+3. Es más rápido que npm en cuanto a rendimiento y eficiencia de disco.
 
 
 **Inconvenientes**
