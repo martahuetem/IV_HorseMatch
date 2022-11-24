@@ -8,6 +8,6 @@ entidad:
   - src/caballosDisponibles.js
 
 automatizar: 
-  fichero: makefile
+  fichero: Makefile
   orden: make
   
