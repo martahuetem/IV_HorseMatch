@@ -23,3 +23,4 @@ class CaballosDisponibles{
 }
 
 module.exports = CaballosDisponibles;
+
