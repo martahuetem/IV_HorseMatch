@@ -58,7 +58,7 @@ Es el remplazo de npm por lo que ha es mucho más rápido y eficiente que su pre
 
 Una vez presentados el top 3 de los gestores de dependencias para node.js se debe de ver cuál es el que más se adecua a mi proyecto en función a los criterios de selección:
 
-1. **Freshness:** En este caso tanto npm como yarn y pnpm se actualizan continuamente.
+1. **Freshness:** En este caso tanto npm como yarn y pnpm se actualizan continuamente (no haya pasado más 18 meses de su última actualización).
 
 2. **Buenas prácticas:** Tras indagar un poco y entrar en varios foros en los que se discute cuál de las tres opciones es mejor, puedo decir que en la mayoría de los casos se recomienda pnpm tanto por su velocidad como por su eficiencia.
 
