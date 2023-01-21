@@ -25,5 +25,5 @@ Este aplicación podrá ser usada por cualquier centro hípico ya que simplement
 #### Orden para comprobar la sintaxis
 Se hara uso de la orden `make check` o `make` para comprobar la sintaxis.
 
-#### Comprobación del test 
+#### Comprobación del test (make test)
 Se debe de hacer uso del comando `pnpm run test`. Este nos dirá si ha habido algún fallo o no en la realización del test además de la localización de dicho error.
