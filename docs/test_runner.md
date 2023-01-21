@@ -1,4 +1,4 @@
-## Elección del Gestor de Tareas 
+## Elección del Test Runner
 
 El Task Runner es una herramienta que automatiza tareas. Se busca la automatización de tareas repetitivas como compilar o pruebas unitarias.
 
