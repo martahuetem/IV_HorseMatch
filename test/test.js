@@ -13,7 +13,7 @@ test('emparejar jinete con caballo', () => {
     //Creo uno jinetes ejemplo
     let marta = new jinete("Marta", 3);
     let carlos = new jinete("Carlos", 2);
-    let paco = new jinete("Paco", 1);
+    let paco = new jinete("Paco", 2);
     let alberto = new jinete("Alberto", 0);
 
     const jinetes = [marta, carlos, paco, alberto];
@@ -21,7 +21,7 @@ test('emparejar jinete con caballo', () => {
     //Creo unos caballos ejemplo
     let caballo1 = new caballo("A", 3);
     let caballo2 = new caballo("B", 2);
-    let caballo3 = new caballo("C", 1);
+    let caballo3 = new caballo("C", 2);
     let caballo4 = new caballo("D", 0);
 
     const horses = [caballo1, caballo2, caballo3, caballo4];
