@@ -11,3 +11,4 @@ automatizar:
   fichero: Makefile
   orden: make
   
+test: ./test/test.js
