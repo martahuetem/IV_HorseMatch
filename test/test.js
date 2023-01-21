@@ -1,7 +1,7 @@
 const jinete = require("../src/jinete");
 const caballo = require("../src/caballo");
 
-
+// Lógica de negocio
 function matchRiderWithHorse(jinetes, horses) {
     jinetes.sort((a, b) => b.nivel - a.nivel);
     horses.sort((a, b) => b.nivel - a.nivel);
