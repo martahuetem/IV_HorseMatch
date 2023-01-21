@@ -1,79 +1,45 @@
-## Elección del Test Runner
+# ELECCIÓN TEST RUNNER
 
-El Task Runner es una herramienta que automatiza tareas. Se busca la automatización de tareas repetitivas como compilar o pruebas unitarias.
+Para hacer elección del Test-Runner que mejor se adapte a mi proyecto los voy a comparar y voy a elegir el que mejor se adapte a mi proyecto. Para ello me voy a ayudar de [synk](https://snyk.io/advisor/).
 
-Para elegir el Task Runner voy a tener en cuenta los siguientes criterios:
+Los criterios que voy a seguir son:
 
-1. **Freshness:** es muy importante que el taks runner esté atualizado y que se actualice cada poco tiempo para que no se quede obsoleto.
+1. **Freshness:** es muy importante que test runner a elegir esté atualizado y que se actualice cada poco tiempo.
+2. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios de node.js.
+3. **Velocidad:** es importante que el test se ejecute rápido.
 
-2. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios. 
+//Biblioteca de aserciones propia para ahorra la deuda tecnica
 
+## jest
 
-## Grunt
+- En cuanto al **mantenimiento** (freshness), jest está en contante actualización para mejorar. Además, es el más utilizado por la comunidad.
+- Este test es **rápido** en su ejecución ya que se puede ejecutar en paralelo.
+- En cuanto a la valoración general de **synk**, tiene una nota de 95/100 con una comunidad activa y es usado por varios usuarios.
 
-Usa inicialmente una configuración en la que indicas las tareas que tendrás disponible para usar. Para cada tarea, se abren, se crean archivos temporales y se cierran los archivos. Por ello algunos optan por su uso.
+## mocha
 
-* Ventajas
+- En cuanto al **mantenimiento**, al igual que jest, mocha tiene actualizaciones frecuentes.
+- En cuanto a la **velocidad**, también tiene una ejecución en paralelo. Sin embargo, se ha demostrado que es más lento que jest.
+- En cuanto a su valoración en **synk**, su calificación es de 95/100 (al igual que jest). Su comunidad es activa también y muy usado por los usuarios.
 
-1. Más facil de configurar que gulp.
-2. Cuenta con una comunidad muy grande.
+## chai
 
-* Inconvenientes
+- El **mantenimiento** de este test no es tan frecuente como los dos anteriores. Mirando en synk tanto mocha como jest tienen actualizaciones casi todos los meses. Sin embargo, chai no ha tenido ninguna actualización desde febrero hasta octubre de este año.
+- No tiene una ejecución en paralelo por lo que es más **lento** que los anteriores.
+- Sin embargo, su valoración en **synk** es de 100/100. Aún que tiene menos usuarios que los anteriores.
 
-1. Hace uso de plugins que a veces hacen varias tareas a la vez.
-2. Hace uso de archivos de configuración de datos que son similares a JSON.
-3. Complicado en proyectos grandes.
+## jasmine
 
-## Gulp
+- Su **mantenimiento** es constante aun que menos que el de jest y mocha.
+- Permite la ejecución en paralelo por lo que es más **rápido** al ejecutarse.
+- Su valoración en **synk** es de 92/100. Tiene una comunidad activa pero muy pocos usuarios lo utilizan.
 
-A diferencia de Grunt, usa menos código y no usa archivos temporales.
+## ava
 
-* Ventajas
+- Su **mantenimiento** es muy frecuente. Casi todos los meses se ha subido alguna actualización.
+- Permite la ejecución en paralelo.
+- Su valoración en **synk** es de 98/100. Tiene una comunidad activa pero muy pocos usuarios lo utilizan (no llega a los 500.000 usuarios).
 
-1. A diferencia de grunt, tiene una serie de plugins los cuales cada uno hace una tarea. 
-2. Hace uso de JavaScript por lo que es más fácil que grunt.
-3. Puede procesar varia tareas a la vez.
-4. Se actualiza cada poco tiempo.
+## Elección
 
-* Inconvenientes
-
-1. Es difícil de configurar.
-
-## npm
-
-npm también puede automatizar tareas. Para ello en el archivo package.json se pueden crear scripts que resumen las líneas de comandos que se usarían para ejecutar las tareas.
-
-* Ventajas
-
-1. A diferencia de grunt, no te limita a sus complementos. Se puede usar todo npm.
-2. No necesita de herramientas adicionales.
-
-* Inconvenientes
-
-1. No funciona muy bien en los entornos de Windows. 
-
-## make
-
-make además de ser una herramienta para generar archivos de otros archivos (p.ej. ejecutables desde el código fuente), también puede hacer otras operaciones como ejecutar otras herramientas y comandos.
-
-* Ventajas
-
-1. A diferencia de grunt o gulp, no necesita de plugins ni de tiempos de ejecución especiales de JavaScript.
-2. Se empezó a usar mucho antes que grunt o gulp por lo que tiene mucha más información.
-3. Cuenta con actualizaciones frecuentes.
-4. Se puede usar con todos los lenguajes.
-
-
-
-## ¿Cuál elijo?
-
-Una vez presentados los taks runners más utilizados, toca elegir cuál se adecua más a mi proyecto siguiendo los criterios de selección.
-
-1. **Freshness:** Todos cumplen este punto.
-
-2. **Buenas prácticas:** Las opiniones están divididas en cuanto a que task runner usar. Los dos a destacar son gulp y make.
-
-
-Teniendo en cuenta los dos puntos anteriores, descarto npm ya que suele dar problemas en windows.
-
-Entre grunt, glunt y make, voy a elegir **make** ya que cuenta con actualizaciones frecuentes y es con el que más familiarizada estoy al ser el que más hemos usado a lo largo de la carrera.
+A partir de los criterios descritos anteriormente y comparando los diferentes test, he decidido utilizar `jest` ya que además de cumplir con los criterios, es el más usado y dispone de una librería propia de aserciones lo que va ahorranos la deuda técnica.
