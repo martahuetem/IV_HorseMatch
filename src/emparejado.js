@@ -17,9 +17,9 @@ class Emparejado{
     }
 
     matchRiderWithHorse() {
-        jinetes.sort((a, b) => b.nivel - a.nivel);
-        caballos.sort((a, b) => b.nivel - a.nivel);
-        return jinetes.map((jinete, nivel) => [jinete.nombre, caballos[nivel].nombre]);
+        this.jinetes.sort((a, b) => b.nivel - a.nivel);
+        this.caballos.sort((a, b) => b.nivel - a.nivel);
+        return this.jinetes.map((jinete, nivel) => [jinete.nombre, this.caballos[nivel].nombre]);
     }
     
 }
