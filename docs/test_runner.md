@@ -22,12 +22,6 @@ Los criterios que voy a seguir son:
 - En cuanto a la **velocidad**, también tiene una ejecución en paralelo. Sin embargo, se ha demostrado que es más lento que jest.
 - En cuanto a su valoración en **synk**, su calificación es de 95/100 (al igual que jest). Su comunidad es activa también y muy usado por los usuarios.
 
-## chai
-
-- El **mantenimiento** de este test no es tan frecuente como los dos anteriores. Mirando en synk tanto mocha como jest tienen actualizaciones casi todos los meses. Sin embargo, chai no ha tenido ninguna actualización desde febrero hasta octubre de este año.
-- No tiene una ejecución en paralelo por lo que es más **lento** que los anteriores.
-- Sin embargo, su valoración en **synk** es de 100/100. Aún que tiene menos usuarios que los anteriores.
-
 ## jasmine
 
 - Su **mantenimiento** es constante aun que menos que el de jest y mocha.
