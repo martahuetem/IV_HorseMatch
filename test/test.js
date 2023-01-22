@@ -1,12 +1,6 @@
 const jinete = require("../src/jinete");
 const caballo = require("../src/caballo");
-
-// Lógica de negocio
-function matchRiderWithHorse(jinetes, horses) {
-    jinetes.sort((a, b) => b.nivel - a.nivel);
-    horses.sort((a, b) => b.nivel - a.nivel);
-    return jinetes.map((jinete, nivel) => [jinete.nombre, horses[nivel].nombre]);
-}
+const emparejado = require("../src/emparejado")
 
 
 test('emparejar jinete con caballo', () => {
@@ -32,9 +26,11 @@ test('emparejar jinete con caballo', () => {
 
     const resultado_esperado = [["Marta", "A"], ["Carlos", "B"], ["Paco", "C"], ["Alberto", "D"]];
 
-    
+    let pareja = new emparejado(horses, jinetes);
 
-    const match = matchRiderWithHorse(jinetes, horses);
+
+
+    const match = pareja.matchRiderWithHorse();
     //console.log(match)
     expect(match).toEqual(resultado_esperado);
 });
