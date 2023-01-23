@@ -2,10 +2,6 @@
   "name": "IV_HorseMatch",
   "version": "1.0.0",
   "description": "Proyecto de IV",
-  "scripts": {
-    "check": "jest --bail && eslint ./src && flow",
-    "test": "jest"
-  },
   "keywords": [],
   "author": "Marta Huete Martínez",
   "license": "ISC",
