@@ -8,9 +8,6 @@
   "keywords": [],
   "author": "Marta Huete Martínez",
   "license": "ISC",
-  "dependencies": {
-    "@pnpm/lockfile-file": "^6.0.2"
-  },
   "devDependencies": {
     "jest": "^29.3.1"
   }
