@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Proyecto de IV",
   "scripts": {
-    "check": "jest --bail",
+    "check": "jest --bail && eslint ./src && flow",
     "test": "jest"
   },
   "keywords": [],
