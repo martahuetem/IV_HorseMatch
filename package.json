@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Proyecto de IV",
   "scripts": {
+    "check": "jest --bail",
     "test": "jest"
   },
   "keywords": [],
