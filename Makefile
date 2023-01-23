@@ -7,4 +7,4 @@ check:
 	$(foreach file, $(files), node --check $(file);)
 
 test: Makefile
-	pnpm run test
+	jest ./test
