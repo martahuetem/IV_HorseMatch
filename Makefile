@@ -1,5 +1,4 @@
 files = $(shell ls ./src/*.js)
-TEST = ./test/
 
 all: 
 	check
