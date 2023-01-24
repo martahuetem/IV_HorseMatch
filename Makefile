@@ -1,10 +1,11 @@
 files = $(shell ls ./src/*.js)
 TEST = ./test/
 
-all: check
+all: 
+	check
 
 check:
 	$(foreach file, $(files), node --check $(file);)
 
-test: Makefile
-	jest ./test
+test: 
+	npx jest 
