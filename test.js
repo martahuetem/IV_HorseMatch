@@ -1,6 +1,6 @@
-const Caballo = require("../src/caballo.js");
-const Jinete = require("../src/jinete.js");
-const matchRiderWithHorse = require("../src/emparejado.js");
+const Caballo = require("./src/caballo.js");
+const Jinete = require("./src/jinete.js");
+const matchRiderWithHorse = require("./src/emparejado.js");
 
 describe("matchRiderWithHorse", () => {
     test('emparejar jinete con caballo', () => {
