@@ -1,6 +1,6 @@
 const Preferencia = {
-    Gusta: 0,
-    NoGusta: 3,
+    NoGusta: 0,
+    Gusta: 3,
 }
 
 module.exports = Preferencia;
