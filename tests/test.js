@@ -1,7 +1,7 @@
 const Caballo = require("../src/caballo.js");
 const Jinete = require("../src/jinete.js");
-const lap = require("../src/emparejado.js");
 const emparejamiento = require("../src/emparejado.js");
+const crear_matriz_costo = require("../src/matriz_costos.js");
 
 function costo_emparejamiento(matriz, binomio){
     let costo = 0
@@ -60,22 +60,8 @@ describe("emparejamiento", () => {
 
         const jinetes = [marta, carlos, alberto, paco];
 
-        let matriz = []
+        let matriz = crear_matriz_costo(jinetes, horses)
         let pref = 0
-
-        for (let i = 0; i < horses.length; i++) {
-            matriz[i] = []
-            for (let j = 0; j < jinetes.length; j++) {
-                let valor_nivel = Math.pow(jinetes[j].nivel - horses[i].nivel, 2)
-                for (let p = 0; p < horses.length; p++) {
-                    if (jinetes[j].montados_antes[p].keys().next().value.nombre == horses[i].nombre) {
-                        pref = jinetes[j].montados_antes[p].get(jinetes[j].montados_antes[p].keys().next().value);
-                    }
-                    let valor = valor_nivel * (4 - pref)
-                    matriz[i][j] = valor + 1
-                }
-            }
-        }
 
         //console.log(matriz)
         //console.log(jinetes)
@@ -111,6 +97,8 @@ describe("emparejamiento", () => {
         let pos_jinete = 0
         let pos_caballo = 0
 
+        //console.log(jinetes)
+       // console.log(riders)
         let binomio = new Map()
 
         for(let i=0; i<jinetes.length; i++){

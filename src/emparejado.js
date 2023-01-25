@@ -1,7 +1,6 @@
 const Caballo = require("./caballo")
 const Jinete = require("./jinete")
 
-
 /**
      * Método que busca el mínimo de una columna dada en una matriz. Teniendo en cuenta que puede haber caballos que
      * ya hayan sido asignados. Devuelve el valor del mínimo y la posición (fila) del caballo mínimo.
