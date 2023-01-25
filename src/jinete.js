@@ -1,5 +1,6 @@
 const Nivel = require("./nivel")
 const Caballo = require("./caballo")
+const Preferencia = require("./preferencia")
 
 /**
  * Declaración de la clase Jinete. Objeto-valor (pues sus datos miembros no 
@@ -11,7 +12,7 @@ class Jinete{
      * Constructor clase Jinete
      * @param {String} nombre Identificador del jinete 
      * @param {Nivel} nivel Nivel del jinete
-     * @param {Array<Map<Caballo, preferencia>>} montados_antes Caballos montados previamente evaluados con una preferencia
+     * @param {Array<Map<Caballo, Preferencia>>} montados_antes Caballos montados previamente evaluados con una preferencia
      */
     constructor(nombre, nivel, montados_antes){
         this.nombre = nombre;
