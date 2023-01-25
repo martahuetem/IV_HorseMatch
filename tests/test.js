@@ -3,71 +3,99 @@ const Jinete = require("../src/jinete.js");
 const emparejamiento = require("../src/emparejado.js");
 const crear_matriz_costo = require("../src/matriz_costos.js");
 
-function costo_emparejamiento(matriz, binomio){
+function costo_emparejamiento(matriz, binomio) {
     let costo = 0
 
-    for(let par of binomio){
+    for (let par of binomio) {
         costo += matriz[par[1]][par[0]]
     }
     return costo
 }
 
-describe("emparejamiento", () => {
-    test('emparejar jinete con caballo', () => {
+function comprobar_matriz(matriz, nfil, ncol) {
+    let menor_que_uno = false
 
-        //Creo unos caballos ejemplo
-        let caballo1 = new Caballo("A", 3);
-        let caballo2 = new Caballo("B", 2);
-        let caballo3 = new Caballo("C", 1);
-        let caballo4 = new Caballo("D", 0);
+    for (let i = 0; i < nfil; i++) {
+        for (let j = 0; j < ncol; j++) {
+            if (matriz[i][j] < 1) {
+                menor_que_uno = true
+            }
+        }
+    }
 
-        const horses = [caballo1, caballo2, caballo3, caballo4];
-
-        //Creo las preferencias de los alumnos a los caballos
-        let pref_marta = [
-            new Map([[caballo1, 3]]),
-            new Map([[caballo2, 3]]),
-            new Map([[caballo3, 0]]),
-            new Map([[caballo4, 0]]),
-        ];
-
-        let pref_carlos = [
-            new Map([[caballo1, 0]]),
-            new Map([[caballo2, 3]]),
-            new Map([[caballo3, 3]]),
-            new Map([[caballo4, 0]]),
-        ];
-
-        let pref_paco = [
-            new Map([[caballo1, 0]]),
-            new Map([[caballo2, 0]]),
-            new Map([[caballo3, 3]]),
-            new Map([[caballo4, 0]]),
-        ];
-
-        let pref_alberto = [
-            new Map([[caballo1, 0]]),
-            new Map([[caballo2, 0]]),
-            new Map([[caballo3, 0]]),
-            new Map([[caballo4, 3]]),
-        ];
-
-        //Creo uno jinetes ejemplo
-        let marta = new Jinete("Marta", 3, pref_marta);
-        let carlos = new Jinete("Carlos", 2, pref_carlos);
-        let paco = new Jinete("Paco", 1, pref_paco);
-        let alberto = new Jinete("Alberto", 0, pref_alberto);
+    return menor_que_uno
+}
 
 
-        const jinetes = [marta, carlos, alberto, paco];
 
-        let njinetes = jinetes.length
-        let ncaballos = horses.length
+ //Creo unos caballos ejemplo
+ let caballo1 = new Caballo("A", 3);
+ let caballo2 = new Caballo("B", 2);
+ let caballo3 = new Caballo("C", 1);
+ let caballo4 = new Caballo("D", 0);
 
+ const horses = [caballo1, caballo2, caballo3, caballo4];
+
+ //Creo las preferencias de los alumnos a los caballos
+ let pref_marta = [
+     new Map([[caballo1, 3]]),
+     new Map([[caballo2, 3]]),
+     new Map([[caballo3, 0]]),
+     new Map([[caballo4, 0]]),
+ ];
+
+ let pref_carlos = [
+     new Map([[caballo1, 0]]),
+     new Map([[caballo2, 3]]),
+     new Map([[caballo3, 3]]),
+     new Map([[caballo4, 0]]),
+ ];
+
+ let pref_paco = [
+     new Map([[caballo1, 0]]),
+     new Map([[caballo2, 0]]),
+     new Map([[caballo3, 3]]),
+     new Map([[caballo4, 0]]),
+ ];
+
+ let pref_alberto = [
+     new Map([[caballo1, 0]]),
+     new Map([[caballo2, 0]]),
+     new Map([[caballo3, 0]]),
+     new Map([[caballo4, 3]]),
+ ];
+
+ //Creo uno jinetes ejemplo
+ let marta = new Jinete("Marta", 3, pref_marta);
+ let carlos = new Jinete("Carlos", 2, pref_carlos);
+ let paco = new Jinete("Paco", 1, pref_paco);
+ let alberto = new Jinete("Alberto", 0, pref_alberto);
+
+
+ const jinetes = [marta, carlos, alberto, paco];
+
+ let njinetes = jinetes.length
+ let ncaballos = horses.length
+ let matriz = crear_matriz_costo(jinetes, horses)
+
+ 
+// TESTS //
+
+describe("Pruebas de corrección", () => {
+    
+    test('El número de jinetes debe de ser menor o igual al de caballos', () => {
         //Comprobamos que el número de jinetes sea siempre menor o igual que el de caballos
         expect(ncaballos).toBeGreaterThanOrEqual(njinetes);
+    });
 
-        let matriz = crear_matriz_costo(jinetes, horses)
+    test('Los costos de la matriz deben de ser mayores o iguales que 1', () => {
+        let matriz_valida = comprobar_matriz(matriz)
+
+        //Compruebo que todos los costes de la matriz son mayores o iguales a 1
+        expect(matriz_valida).toBeFalsy()
+    });
+
+    test('Asignación correcta de los binomios (caballo, jinete)', () => {
         let pref = 0
 
         const resultado_esperado = new Map([
@@ -87,7 +115,7 @@ describe("emparejamiento", () => {
 
         let i = 0
 
-        for(let parejas of res){
+        for (let parejas of res) {
             riders[i] = parejas[0]
             chevals[i] = parejas[1]
             i++
@@ -98,7 +126,7 @@ describe("emparejamiento", () => {
 
         let binomio = new Map()
 
-        for(let i=0; i<jinetes.length; i++){
+        for (let i = 0; i < jinetes.length; i++) {
             pos_jinete = riders[i]
             pos_caballo = chevals[i]
             binomio.set(jinetes[pos_jinete].nombre, horses[pos_caballo].nombre)
