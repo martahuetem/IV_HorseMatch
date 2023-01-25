@@ -58,14 +58,17 @@ describe("emparejamiento", () => {
         let paco = new Jinete("Paco", 1, pref_paco);
         let alberto = new Jinete("Alberto", 0, pref_alberto);
 
+
         const jinetes = [marta, carlos, alberto, paco];
+
+        let njinetes = jinetes.length
+        let ncaballos = horses.length
+
+        //Comprobamos que el número de jinetes sea siempre menor o igual que el de caballos
+        expect(ncaballos).toBeGreaterThanOrEqual(njinetes);
 
         let matriz = crear_matriz_costo(jinetes, horses)
         let pref = 0
-
-        //console.log(matriz)
-        //console.log(jinetes)
-        //console.log(horses)
 
         const resultado_esperado = new Map([
             ["Marta", "A"],
@@ -82,8 +85,6 @@ describe("emparejamiento", () => {
         let riders = new Array(jinetes.length)
         let chevals = new Array(horses.length)
 
-        //console.log(res)
-
         let i = 0
 
         for(let parejas of res){
@@ -92,13 +93,9 @@ describe("emparejamiento", () => {
             i++
         }
 
-        //console.log(riders, chevals)
-
         let pos_jinete = 0
         let pos_caballo = 0
 
-        //console.log(jinetes)
-       // console.log(riders)
         let binomio = new Map()
 
         for(let i=0; i<jinetes.length; i++){
@@ -107,17 +104,10 @@ describe("emparejamiento", () => {
             binomio.set(jinetes[pos_jinete].nombre, horses[pos_caballo].nombre)
         }
 
-        //console.log(resultado_esperado)
-       // console.log(costo_emparejamiento(matriz, resultado_esperado))
-
-       // console.log(binomio)
-       // console.log(costo_emparejamiento(matriz, res))
-
         let costo = costo_emparejamiento(matriz, res)
 
-        //console.log(riders, cheval)
+        //Compruebo que el costo sea igual ya que a mismo costo, puede haber varias opciones diferentes
         expect(costo).toEqual(costo_esperado)
-
         //expect(binomio).toEqual(resultado_esperado);
 
     });
