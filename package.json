@@ -6,7 +6,6 @@
   "author": "Marta Huete Martínez",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.3.1",
-    "make": "^0.8.1"
+    "jest": "^29.3.1"
   }
 }
