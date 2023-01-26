@@ -21,8 +21,8 @@ function crear_matriz_costo(jinetes, horses) {
         for (let j = 0; j < jinetes.length; j++) {
             let valor_nivel = Math.pow(jinetes[j].nivel - horses[i].nivel, 2)
             for (let p = 0; p < horses.length; p++) {
-                if (jinetes[j].montados_antes[p].keys().next().value.nombre == horses[i].nombre) {
-                    pref = jinetes[j].montados_antes[p].get(jinetes[j].montados_antes[p].keys().next().value);
+                if (jinetes[j].pref_caballos[p].keys().next().value.nombre == horses[i].nombre) {
+                    pref = jinetes[j].pref_caballos[p].get(jinetes[j].pref_caballos[p].keys().next().value);
                 }
                 let valor = valor_nivel * (4 - pref)
                 matriz[i][j] = valor + 1
