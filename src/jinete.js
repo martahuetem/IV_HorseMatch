@@ -12,12 +12,12 @@ class Jinete{
      * Constructor clase Jinete
      * @param {String} nombre Identificador del jinete 
      * @param {Nivel} nivel Nivel del jinete
-     * @param {Array<Map<Caballo, Preferencia>>} montados_antes Caballos montados previamente evaluados con una preferencia
+     * @param {Array<Map<Caballo, Preferencia>>} pref_caballos Caballos montados previamente evaluados con una preferencia
      */
-    constructor(nombre, nivel, montados_antes){
+    constructor(nombre, nivel, pref_caballos){
         this.nombre = nombre;
         this.nivel = nivel;
-        this.montados_antes = montados_antes
+        this.pref_caballos = pref_caballos
     }
 
 }
