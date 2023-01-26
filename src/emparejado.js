@@ -50,9 +50,11 @@ function minimum_columna(matriz, nfil, ncol, columna_usuario, caballos_asignados
 
 function emparejamiento(matriz, ncaballos, nusuarios) {
 
+  //Lanzo la excepción en caso de que el número de caballos sea menor al de usuarios
   if(ncaballos < nusuarios){
     throw new ExcepcionNumeroJinetes();
   }
+
 
   let parejas = new Map()
 
@@ -72,11 +74,8 @@ function emparejamiento(matriz, ncaballos, nusuarios) {
     caballo_min[col] = minimum.pos_caballo_minimo
   }
 
-
   let min = 0
-  let pos_jm = 0
-
-
+  let pos_rider_min = 0
 
   while (parejas.size < nusuarios) {
 
@@ -86,7 +85,7 @@ function emparejamiento(matriz, ncaballos, nusuarios) {
     while (pos_jinete_minimo < costo_min_user.length && !encontrado) {
       if (parejas.has(pos_jinete_minimo) == false) {
         min = costo_min_user[pos_jinete_minimo]
-        pos_jm = pos_jinete_minimo
+        pos_rider_min = pos_jinete_minimo
         encontrado = true
       }
       pos_jinete_minimo++
@@ -95,20 +94,20 @@ function emparejamiento(matriz, ncaballos, nusuarios) {
     while (pos_jinete_minimo < costo_min_user.length) {
       if (parejas.has(pos_jinete_minimo) == false && costo_min_user[pos_jinete_minimo] < min) {
         min = costo_min_user[pos_jinete_minimo]
-        pos_jm = pos_jinete_minimo
+        pos_rider_min = pos_jinete_minimo
       }
       pos_jinete_minimo++
     }
 
 
-    parejas.set(pos_jm, caballo_min[pos_jm])
+    parejas.set(pos_rider_min, caballo_min[pos_rider_min])
 
 
-    caballos_asignados[caballo_min[pos_jm]] = 1
+    caballos_asignados[caballo_min[pos_rider_min]] = 1
     
 
     for (let col = 0; col < nusuarios; col++) {
-      if (caballo_min[col] == caballo_min[pos_jm] && col != pos_jm && !parejas.has(col)) {
+      if (caballo_min[col] == caballo_min[pos_rider_min] && col != pos_rider_min && !parejas.has(col)) {
         let minimum = minimum_columna(matriz, ncaballos, nusuarios, col, caballos_asignados)
         costo_min_user[col] = minimum.minimo
         caballo_min[col] = minimum.pos_caballo_minimo
