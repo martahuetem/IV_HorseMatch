@@ -1,5 +1,4 @@
 const Nivel = require("./nivel")
-const Caballo = require("./caballo")
 const Preferencia = require("./preferencia")
 
 /**
