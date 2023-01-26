@@ -1,5 +1,8 @@
 const Caballo = require("../src/caballo.js");
 const Jinete = require("../src/jinete.js");
+const Nivel = require("../src/nivel");
+const Preferencia = require("../src/preferencia");
+const ExcepcionNumeroJinetes = require("../src/excepciones.js");
 const emparejamiento = require("../src/emparejado.js");
 const crear_matriz_costo = require("../src/matriz_costos.js");
 const costo_emparejamiento = require("../src/costo_emparejar.js");
@@ -23,53 +26,49 @@ function comprobar_matriz(matriz, nfil, ncol) {
 
  //Creo unos caballos ejemplo
  let horses = [
-    new Caballo("A", 3),
-    new Caballo("B", 2),
-    new Caballo("C", 1),
-    new Caballo("D", 0)
+    new Caballo("A", Nivel.Alto),
+    new Caballo("B", Nivel.MedioAlto),
+    new Caballo("C", Nivel.Medio),
+    new Caballo("D", Nivel.Bajo)
  ]
 
  //Creo las preferencias de los alumnos a los caballos
  let pref_marta = [
-     new Map([[horses[0], 3]]),
-     new Map([[horses[1], 3]]),
-     new Map([[horses[2], 0]]),
-     new Map([[horses[3], 0]]),
+     new Map([[horses[0], Preferencia.Gusta]]),
+     new Map([[horses[1], Preferencia.Gusta]]),
+     new Map([[horses[2], Preferencia.NoGusta]]),
+     new Map([[horses[3], Preferencia.NoGusta]]),
  ];
 
  let pref_carlos = [
-     new Map([[horses[0], 0]]),
-     new Map([[horses[1], 3]]),
-     new Map([[horses[2], 3]]),
-     new Map([[horses[3], 0]]),
+     new Map([[horses[0], Preferencia.NoGusta]]),
+     new Map([[horses[1], Preferencia.Gusta]]),
+     new Map([[horses[2], Preferencia.Gusta]]),
+     new Map([[horses[3], Preferencia.NoGusta]]),
  ];
 
  let pref_paco = [
-     new Map([[horses[0], 0]]),
-     new Map([[horses[1], 0]]),
-     new Map([[horses[2], 3]]),
-     new Map([[horses[3], 0]]),
+     new Map([[horses[0], Preferencia.NoGusta]]),
+     new Map([[horses[1], Preferencia.NoGusta]]),
+     new Map([[horses[2], Preferencia.Gusta]]),
+     new Map([[horses[3], Preferencia.NoGusta]]),
  ];
 
  let pref_alberto = [
-     new Map([[horses[0], 0]]),
-     new Map([[horses[1], 0]]),
-     new Map([[horses[2], 0]]),
-     new Map([[horses[3], 3]]),
+     new Map([[horses[0], Preferencia.NoGusta]]),
+     new Map([[horses[1], Preferencia.NoGusta]]),
+     new Map([[horses[2], Preferencia.NoGusta]]),
+     new Map([[horses[3], Preferencia.Gusta]]),
  ];
 
- //Creo uno jinetes ejemplo
- let marta = new Jinete("Marta", 3, pref_marta);
- let carlos = new Jinete("Carlos", 2, pref_carlos);
- let paco = new Jinete("Paco", 1, pref_paco);
- let alberto = new Jinete("Alberto", 0, pref_alberto);
 
  let jinetes = [
-    new Jinete("Marta", 3, pref_marta),
-    new Jinete("Carlos", 2, pref_carlos),
-    new Jinete("Paco", 1, pref_paco),
-    new Jinete("Alberto", 0, pref_alberto)
+    new Jinete("Marta", Nivel.Alto, pref_marta),
+    new Jinete("Carlos", Nivel.MedioAlto, pref_carlos),
+    new Jinete("Paco", Nivel.Medio, pref_paco),
+    new Jinete("Alberto", Nivel.Bajo, pref_alberto)
  ]
+
 
  let matriz = crear_matriz_costo(jinetes, horses)
 
@@ -98,7 +97,17 @@ describe("Pruebas de corrección", () => {
 
         const caballos_asignados = [0, 1, 0, 0]
 
-        let res = emparejamiento(matriz, horses.length, jinetes.length)
+        let res = []
+
+        //Compruebo la excepción
+        try{
+            res = emparejamiento(matriz, horses.length, jinetes.length)
+        } catch (excepcion){
+            if(excepcion instanceof ExcepcionNumeroJinetes){
+                return "El número de jinetes debe de ser menor o igual al de caballos"
+            }
+        }
+    
         let riders = new Array(jinetes.length)
         let chevals = new Array(horses.length)
 

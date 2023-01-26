@@ -1,5 +1,6 @@
 const Caballo = require("./caballo")
 const Jinete = require("./jinete")
+const ExcepcionNumeroJinetes = require("../src/excepciones.js");
 
 /**
      * Método que busca el mínimo de una columna dada en una matriz. Teniendo en cuenta que puede haber caballos que
@@ -48,6 +49,10 @@ function minimum_columna(matriz, nfil, ncol, columna_usuario, caballos_asignados
      */
 
 function emparejamiento(matriz, ncaballos, nusuarios) {
+
+  if(ncaballos < nusuarios){
+    throw new ExcepcionNumeroJinetes();
+  }
 
   let parejas = new Map()
 
@@ -116,4 +121,4 @@ function emparejamiento(matriz, ncaballos, nusuarios) {
 
 }
 
-module.exports = emparejamiento;
+module.exports =  emparejamiento;
