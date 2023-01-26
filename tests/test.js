@@ -2,15 +2,8 @@ const Caballo = require("../src/caballo.js");
 const Jinete = require("../src/jinete.js");
 const emparejamiento = require("../src/emparejado.js");
 const crear_matriz_costo = require("../src/matriz_costos.js");
+const costo_emparejamiento = require("../src/costo_emparejar.js");
 
-function costo_emparejamiento(matriz, binomio) {
-    let costo = 0
-
-    for (let par of binomio) {
-        costo += matriz[par[1]][par[0]]
-    }
-    return costo
-}
 
 function comprobar_matriz(matriz, nfil, ncol) {
     let menor_que_uno = false
