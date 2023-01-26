@@ -35,7 +35,7 @@ function minimum_columna(matriz, nfil, ncol, columna_usuario, caballos_asignados
   }
 
   return {
-    pos_minimo: pos_min,
+    pos_caballo_minimo: pos_min,
     minimo: min
   };
 }
@@ -48,6 +48,7 @@ function minimum_columna(matriz, nfil, ncol, columna_usuario, caballos_asignados
      */
 
 function emparejamiento(matriz, ncaballos, nusuarios) {
+
   let parejas = new Map()
 
   let costo_min_user = new Array(nusuarios)
@@ -63,50 +64,49 @@ function emparejamiento(matriz, ncaballos, nusuarios) {
   for (let col = 0; col < nusuarios; col++) {
     let minimum = minimum_columna(matriz, ncaballos, nusuarios, col, caballos_asignados)
     costo_min_user[col] = minimum.minimo
-    caballo_min[col] = minimum.pos_minimo
+    caballo_min[col] = minimum.pos_caballo_minimo
   }
 
-  //console.log(caballo_min)
+
   let min = 0
   let pos_jm = 0
 
-  //console.log("parejas", parejas.size)
+
 
   while (parejas.size < nusuarios) {
 
     let encontrado = false
-    let jinete = 0
+    let pos_jinete_minimo = 0
 
-    while (jinete < costo_min_user.length && !encontrado) {
-      if (parejas.has(jinete) == false) {
-        min = costo_min_user[jinete]
-        pos_jm = jinete
+    while (pos_jinete_minimo < costo_min_user.length && !encontrado) {
+      if (parejas.has(pos_jinete_minimo) == false) {
+        min = costo_min_user[pos_jinete_minimo]
+        pos_jm = pos_jinete_minimo
         encontrado = true
       }
-      jinete++
+      pos_jinete_minimo++
     }
 
-    while (jinete < costo_min_user.length) {
-      if (parejas.has(jinete) == false && costo_min_user[jinete] < min) {
-        min = costo_min_user[jinete]
-        pos_jm = jinete
+    while (pos_jinete_minimo < costo_min_user.length) {
+      if (parejas.has(pos_jinete_minimo) == false && costo_min_user[pos_jinete_minimo] < min) {
+        min = costo_min_user[pos_jinete_minimo]
+        pos_jm = pos_jinete_minimo
       }
-      jinete++
+      pos_jinete_minimo++
     }
 
-    //console.log(jinete, caballo_min[jinete])
 
     parejas.set(pos_jm, caballo_min[pos_jm])
-    // console.log(parejas)
 
 
     caballos_asignados[caballo_min[pos_jm]] = 1
+    
 
     for (let col = 0; col < nusuarios; col++) {
       if (caballo_min[col] == caballo_min[pos_jm] && col != pos_jm && !parejas.has(col)) {
         let minimum = minimum_columna(matriz, ncaballos, nusuarios, col, caballos_asignados)
         costo_min_user[col] = minimum.minimo
-        caballo_min[col] = minimum.pos_minimo
+        caballo_min[col] = minimum.pos_caballo_minimo
       }
     }
 
