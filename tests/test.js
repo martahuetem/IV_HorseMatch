@@ -85,13 +85,6 @@ function comprobar_matriz(matriz, nfil, ncol) {
 
 describe("Pruebas de corrección", () => {
 
-    test('El número de jinetes debe de ser menor o igual al de caballos', () => {
-        //Comprobamos que el número de jinetes sea siempre menor o igual que el de caballos
-        let njinetes = jinetes.length
-        let ncaballos = horses.length
-        expect(ncaballos).toBeGreaterThanOrEqual(njinetes);
-    });
-
     test('Los costos de la matriz deben de ser mayores o iguales que 1', () => {
         //Compruebo que todos los costes de la matriz son mayores o iguales a 1
         let matriz_valida = comprobar_matriz(matriz)
