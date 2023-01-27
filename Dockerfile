@@ -4,8 +4,7 @@ FROM node:bullseye-slim
 RUN mkdir -p /home/app
 
 #indico que el directorio de trabajo es /home/app (creado anteriormente)
-#por lo tanto, en dicho directorio es donde se van a ejecutar los
-#comandos del Dockerfile
+#por lo tanto, en dicho directorio es donde se van a ejecutar los comandos del Dockerfile
 WORKDIR /home/app
 
 #copio los archivos package*.json y package-lock.json
