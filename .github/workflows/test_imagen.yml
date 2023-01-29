@@ -1,0 +1,37 @@
+# <a name="this-workflow-uses-actions-that-are-not-certified-by-github"></a>Este flujo de trabajo usa acciones que no GitHub no certifica.
+# <a name="they-are-provided-by-a-third-party-and-are-governed-by"></a>Estas las proporcionan entidades terceras y las gobiernan
+# <a name="separate-terms-of-service-privacy-policy-and-support"></a>condiciones de servicio, políticas de privacidad y documentación de soporte
+# <a name="documentation"></a>en línea.
+
+# <a name="github-recommends-pinning-actions-to-a-commit-sha"></a>GitHub recomienda anclar acciones a un SHA de confirmación.
+# <a name="to-get-a-newer-version-you-will-need-to-update-the-sha"></a>Para obtener una versión más reciente, debes actualizar el SHA.
+# <a name="you-can-also-reference-a-tag-or-branch-but-the-action-may-change-without-warning"></a>También puedes hacer referencia a una etiqueta o rama, pero la acción puede cambiar sin ninguna advertencia.
+
+name: Publish Docker image
+
+on:
+  push:
+    paths: 
+      - '*.json'
+      - 'Dockerfile'
+
+jobs:
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: martahuetemartinez/horse_match
