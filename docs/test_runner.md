@@ -5,7 +5,7 @@ Para hacer elección del Test-Runner que mejor se adapte a mi proyecto los voy a
 Los criterios que voy a seguir son:
 
 1. **Freshness:** es muy importante que test runner a elegir esté atualizado y que se actualice cada poco tiempo.
-2. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios de node.js.
+2. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios de node.js. Para ello he usado estos dos enlaces: [Top JavaScript Testing Frameworks](https://www.browserstack.com/guide/top-javascript-testing-frameworks) y [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/)
 3. **Velocidad:** es importante que el test se ejecute rápido.
 4. **Biblioteca de aserciones**: buscaré que el test runner tenga su propia biblioteca de aserciones para evitar la deuda técnica.
 
@@ -45,4 +45,4 @@ Los criterios que voy a seguir son:
 
 ## Elección
 
-A partir de los criterios descritos anteriormente y comparando los diferentes test, he decidido utilizar `jest` ya que además de cumplir con los criterios, es el más usado y dispone de una biblioteca propia de aserciones lo que va ahorranos la deuda técnica.
+A partir de los criterios descritos anteriormente y comparando los diferentes test, he decidido utilizar `jest` ya que además de cumplir con los criterios, es de los más usado y dispone de una biblioteca propia de aserciones lo que va ahorranos la deuda técnica.
