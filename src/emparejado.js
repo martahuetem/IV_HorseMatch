@@ -27,6 +27,7 @@ function emparejamiento(matriz, ncaballos, nusuarios) {
 
   let caballos_asignados = new Array(ncaballos)
 
+  
   for (let fila = 0; fila < ncaballos; fila++) {
     caballos_asignados[fila] = 0
   }
