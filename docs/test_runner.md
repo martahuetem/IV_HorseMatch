@@ -43,6 +43,30 @@ Los criterios que voy a seguir son:
 - Es el menos utilizado por la comunidad de node.js.
 
 
+# ELECCIÓN DE LA BIBLIOTECA DE ASERCIONES
+
+Tras indagar sobre que bibliotecas de aserciones son compatibles con node.js, he destacado 2:
+
+## node:test
+- Es la biblioteca por defecto de node. Lo que nos ahorraría la deuda técnica.
+- Su última actualización fué en Agosto. Esta información la he obtenido de [synk](https://snyk.io/advisor/npm-package/test).
+
+## should.js
+- Es compatible con node.js.
+- La descarto al no tener una actualización continua. Esta información la he obtenido de [synk](https://snyk.io/advisor/npm-package/should).
+- Tiene un estilo cercano al lenguaje cotidiano lo que lo hace más legible a la hora de desarrollar el test.
+
+## expect.js
+- Es compatible con node.js.
+- Se basa en `should.js` y la descarto al no tener una actualización continua. Esta información la he obtenido de [synk](https://snyk.io/advisor/npm-package/expect.js).
+- Al igual que `should.js`, hace uso de un estilo legible.
+
+## chai
+- Es compatible con node.js
+- Su última actualización fue en diciembre. Esta información la he obtenido de [synk](https://snyk.io/advisor/npm-package/chai).
+- Permite elegir un estilo más legible a la hora de desarrollar el test. Es expansible por lo que tiene complementos para muchas cosas como por ejemplo para agregar promesas al código.
+  
+
 ## Elección
 
-A partir de los criterios descritos anteriormente y comparando los diferentes test, he decidido utilizar `jest` ya que además de cumplir con los criterios, es de los más usado y dispone de una biblioteca propia de aserciones lo que va ahorranos la deuda técnica.
+A partir de los criterios descritos anteriormente y comparando los diferentes test, he decidido utilizar `jest` como test ya que además de cumplir con los criterios, es de los más usado. Como biblioteca de aserciones he decidido utilizar la propia de `jest` ya que va a ahorranos la deuda técnica. 
