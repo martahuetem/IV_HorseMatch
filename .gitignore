@@ -1,9 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
 
-node_modules
+# Ignoro la carpeta node_modules
+node_modules/
 
 # C extensions
 *.so
