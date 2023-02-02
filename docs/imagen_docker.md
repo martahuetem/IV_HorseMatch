@@ -4,7 +4,7 @@ Para elegir la imagen base para mi proyecto voy a tener en cuenta los siguientes
 
 1. **Freshness y mantenimiento:** es muy importante que la imagen a elegir esté atualizado y que se actualice cada poco tiempo. 
 
-2. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios.
+2. **Buenas prácticas:** ver qué es lo que aconseja la mayoría de usuarios y ver que es lo que mejor se adapta a node.js.
 
 3. **Peso:** se tiene que tener en cuenta el peso de la imagen.
 
@@ -50,14 +50,15 @@ Además de esas dos imágenes hay muchas otras que han sido creadas por publicad
 
 ## Recomendaciones de usuarios para node.js
 
-Buscando que imágenes recomiendan los usuarios para node.js he encontrado que las que más se recomiendan son: `alpine` y `node:bullseye-slim` de la imagen de `node`.
+Buscando que imágenes recomiendan los usuarios para node.js he encontrado el siguiente enlace [snyk](https://snyk.io/blog/choosing-the-best-node-js-docker-image/) en el que las imagenes que más se recomiendan son: `alpine` y `node:bullseye-slim` de la imagen de `node`. Como ya he expuesto `alpine` voy a exponer `node:bullseye-slim`.
 
 ### node:bullseye-slim
 
 - Al igual que todas las nombradas, tiene un mantenimiento constante siendo su última actualización hace 12 días.
-- Es compatible con node aportando todo lo necesario para su desarrollo.
+- Es compatible con node.js aportando todo lo necesario para su desarrollo.
 - La imagen de `node` tiene un tamaño de 928.24 MB, sin embargo, al optar por la opción de `-slim` la imagen solo contiene los paquetes necesario para correr `node` y su tamaño se reduce a 247.8MB.
+  
 
 ## Elección de la imagen base
 
-Expuesto todo lo anterior y guiandome por lo que recomiendan los usuarios, he decidido usar `node:bullseye-slim` como imagen base. Ya que aunque no sea la más pequeña, es la que mejor se adapta a node.js.
+Expuesto todo lo anterior y guiándome por lo que recomiendan los usuarios, he decidido usar `node:bullseye-slim` como imagen base. Aunque no es la más pequeña, cumple con todos los criterios expuestos ya que tiene un matenimiento constante, es compatible con node y tiene un tamaño pequeño.
