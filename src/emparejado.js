@@ -19,7 +19,7 @@ class asignacionParejas{
 
         
 
-        // //Lanzo la excepción en caso de que el número de caballos sea menor al de usuarios
+        //Lanzo la excepción en caso de que el número de caballos sea menor al de usuarios
         if(this.ncaballos < this.nusuarios){
           throw new ExcepcionNumeroJinetesCaballos(1);
         }else if(this.nusuarios == 0){
@@ -51,9 +51,7 @@ class asignacionParejas{
 
       #minimumColumna(ncol){
         let min = Number.MAX_SAFE_INTEGER
-        let fila = 0
         let pos_min = undefined
-        let asignado = false
 
         for(let fila=0; fila<this.ncaballos; fila++){
           if (this.caballos_asignados[fila] == 0 && this.matriz_costos[fila][ncol] < min) {
@@ -71,7 +69,6 @@ class asignacionParejas{
 
       //Método para seleccionar el jinete con menor costo de emparejamiento entre los no emparejados
       #seleccionJineteMenorCostoNoAsignado(){
-        let encontrado = false
         let min = Number.MAX_SAFE_INTEGER
         let pos_rider_min = undefined
       
@@ -101,13 +98,9 @@ class asignacionParejas{
       }
 
       crearParejas(){
-        console.log("Hello")
         while (this.parejas.size < this.nusuarios) {
-          //console.log(this.parejas, "parejas")
           //Encuentro el jinete con costo menor de emparejamiento entre los jinetes no emparejados
           let pos_rider_min = this.#seleccionJineteMenorCostoNoAsignado()
-
-         // console.log("pos", pos_rider_min)
 
           //Añado la pareja jinete, caballo
           this.parejas.set(pos_rider_min, this.caballo_min[pos_rider_min])
