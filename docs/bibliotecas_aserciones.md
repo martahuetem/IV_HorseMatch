@@ -11,12 +11,7 @@ Los criterios de selección para las bibliotecas de aserciones son:
 
 1. **Freshness:** es muy importante que biblioteca de aserciones a elegir esté atualizado y que se actualice cada poco tiempo.
 
-2. **Facilidad de uso:** priorizaré que sea facil de usar y de configurar con los test runners.
-
-2. **Uso por la comunidad:** el hecho de que un gran número de usuarios haga uso de dicha biblioteca es signo de fiabilidad.
-
-3. **Uso con los test:** debe de poder usarse con los test expuestos en [test_runner](test_runner.md) y en especial con `jest` al ser el elegido.
-
+2. **Uso con los test:** debe de poder usarse con los test expuestos en [test_runner](test_runner.md).
 
 Tras indagar sobre que bibliotecas de aserciones son compatibles con node.js, he destacado:
 
@@ -49,7 +44,7 @@ Tras indagar sobre que bibliotecas de aserciones son compatibles con node.js, he
 - Al igual que las 3 anteriores hace uso de BDD lo que facilita su uso y compresión.
 - Según [snyk](https://snyk.io/advisor/npm-package/@jest/expect), su último commit fué hace 2 días y su última versión se subió hace 6 días por lo que podemos decir que su mantenimiento es constante.
 - Según [open base](https://openbase.com/js/@jest/expect), su popularidad es bastante alta ya que en la semana del 16 de enero tuvo 6 millones de descargas.
-- Es compatible con `jest` que es el test runner elegido.
+- Es compatible con los test en JavaScript.
 
 
 ## ELECCIÓN
