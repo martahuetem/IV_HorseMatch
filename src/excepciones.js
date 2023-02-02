@@ -5,8 +5,16 @@
      */
 
 
-function ExcepcionNumeroJinetes() {
-    this.mensaje = "El número de jinetes no es menor o igual que el de caballos"
+function ExcepcionNumeroJinetesCaballos(valor) {
+    
+    switch(valor){
+        case 1:
+            this.mensaje = "El número de jinetes debe ser menor que el de caballos"
+            break;
+        case 2: 
+            this.mensaje = "El número de jinetes no puede ser 0"
+            break;
+    }
 }
 
-module.exports = ExcepcionNumeroJinetes;
+module.exports = ExcepcionNumeroJinetesCaballos;

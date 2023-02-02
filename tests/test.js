@@ -2,7 +2,7 @@ const Caballo = require("../src/caballo.js");
 const Jinete = require("../src/jinete.js");
 const Nivel = require("../src/nivel");
 const Preferencia = require("../src/preferencia");
-const ExcepcionNumeroJinetes = require("../src/excepciones.js");
+const ExcepcionNumeroJinetesCaballos = require("../src/excepciones.js");
 const emparejamiento = require("../src/emparejado.js");
 const crear_matriz_costo = require("../src/matriz_costos.js");
 const costo_emparejamiento = require("../src/costo_emparejar.js");
@@ -101,10 +101,10 @@ describe("Pruebas de corrección", () => {
 
         //Compruebo la excepción
         try{
-            res = emparejamiento(matriz, horses.length, jinetes.length)
+            res = emparejamiento(matriz)
         } catch (excepcion){
-            if(excepcion instanceof ExcepcionNumeroJinetes){
-                return "El número de jinetes debe de ser menor o igual al de caballos"
+            if(excepcion instanceof ExcepcionNumeroJinetesCaballos){
+                return excepcion.mensaje
             }
         }
     
