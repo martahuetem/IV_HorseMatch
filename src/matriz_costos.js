@@ -12,7 +12,7 @@ const Jinete = require("./jinete")
      */
 
 
-function crear_matriz_costo(jinetes, horses) {
+function crearMatrizCosto(jinetes, horses) {
 
     let matriz = []
 
@@ -32,4 +32,4 @@ function crear_matriz_costo(jinetes, horses) {
     return matriz
 }
 
-module.exports = crear_matriz_costo;
+module.exports = crearMatrizCosto;

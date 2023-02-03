@@ -4,11 +4,11 @@ const Nivel = require("../src/nivel");
 const Preferencia = require("../src/preferencia");
 const ExcepcionNumeroJinetesCaballos = require("../src/excepciones.js");
 const emparejamiento = require("../src/emparejado.js");
-const crear_matriz_costo = require("../src/matriz_costos.js");
-const costo_emparejamiento = require("../src/costo_emparejar.js");
+const crearMatrizCosto = require("../src/matriz_costos.js");
+const costoEmparejamiento = require("../src/costo_emparejar.js");
 
 
-function comprobar_matriz(matriz, nfil, ncol) {
+function comprobarMatriz(matriz, nfil, ncol) {
     let menor_que_uno = false
 
     for (let i = 0; i < nfil; i++) {
@@ -70,7 +70,7 @@ function comprobar_matriz(matriz, nfil, ncol) {
  ]
 
 
- let matriz = crear_matriz_costo(jinetes, horses)
+ let matriz = crearMatrizCosto(jinetes, horses)
 
  
 // TESTS //
@@ -79,7 +79,7 @@ describe("Pruebas de corrección", () => {
 
     test('Los costos de la matriz deben de ser mayores o iguales que 1', () => {
         //Compruebo que todos los costes de la matriz son mayores o iguales a 1
-        let matriz_valida = comprobar_matriz(matriz)
+        let matriz_valida = comprobarMatriz(matriz)
         expect(matriz_valida).toBeFalsy()
     });
 
@@ -130,7 +130,7 @@ describe("Pruebas de corrección", () => {
             binomio.set(jinetes[pos_jinete].nombre, horses[pos_caballo].nombre)
         }
 
-        let costo = costo_emparejamiento(matriz, res)
+        let costo = costoEmparejamiento(matriz, res)
 
         //Compruebo que el costo sea igual ya que a mismo costo, puede haber varias opciones diferentes
         expect(costo).toEqual(costo_esperado)

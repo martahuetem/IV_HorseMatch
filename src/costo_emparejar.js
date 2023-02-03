@@ -1,4 +1,4 @@
-function costo_emparejamiento(matriz, binomio) {
+function costoEmparejamiento(matriz, binomio) {
     let costo = 0
 
     for (let par of binomio) {
@@ -7,4 +7,4 @@ function costo_emparejamiento(matriz, binomio) {
     return costo
 }
 
-module.exports = costo_emparejamiento;
+module.exports = costoEmparejamiento;

@@ -1,7 +1,6 @@
 const Caballo = require("./caballo")
 const Jinete = require("./jinete")
 const ExcepcionNumeroJinetesCaballos = require("../src/excepciones.js");
-//const minimum_columna = require("../src/minimo_columna.js")
 
 
 class asignacionParejas{
