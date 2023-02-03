@@ -23,14 +23,6 @@ Tras indagar sobre que bibliotecas de aserciones son compatibles con node.js, he
 - Tiene un matenimiento constante. Su último commit según [snyk](https://snyk.io/advisor/npm-package/chai) fué hace 2 meses y su última versión se subió hace 3.
 
 
-## assert
-
-- Hace uso de BDD lo que facilitará su uso y su entendimiento.
-- Es compatible con los test runners de JavaScript.
-- Según [open base](https://openbase.com/js/assert), tiene una popularidad muy alta siendo 12 millones sus descargas de la semana del 16 de enero de 2023.
-- Su mantenimiento es relativamente constante siendo su último commit hace 3 meses según [snyk](https://snyk.io/advisor/npm-package/assert)
-
-
 ## unexpected
 
 - Hace uso de BDD lo que facilita su uso.
