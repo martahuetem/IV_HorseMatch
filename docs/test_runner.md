@@ -1,4 +1,6 @@
-# ELECCIÓN TEST RUNNER
+En este documento, presentaré tanto los criterios para la elección del test runner y de la biblioteca de aserciones como una breve exposición de los test runners y las bibliotecas de aserciones a tener en cuenta:
+
+# TEST RUNNER
 
 El siguiente paso para avanzar en mi proyecto es elegir el test runner que mejor se adapte a este. Para ello, voy a tener en cuenta los siguientes criterios:
 
@@ -92,13 +94,52 @@ La elección del test runner esta basada en la información extraída de varias 
 - Su mantenimiento no es tan constante como los test expuestos anteriormente. Como se puede ver en [snyk](https://snyk.io/advisor/npm-package/jasmine), su último commit y su última actualización fueron hace tres meses.
 
 
-## ELECCIÓN DEL TEST
+# BIBLIOTECA DE ASERCIONES
 
-Una vez expuestos los criterios y los test, 
+Los criterios de selección para las bibliotecas de aserciones son:
 
-- Descarto **cypress** ya que aunque es de los más usados por la comunidad, su uso se restringe a muy pocos navegadores lo que podría limitar el desarrollo del proyecto.
+1. **Freshness:** es muy importante que biblioteca de aserciones a elegir esté atualizado y que se actualice cada poco tiempo.
+
+2. **Los estilos que utilice:** se tendrá en cuenta los estilos que utilice la biblioteca. Se primará el uso de BDD (Behavior Driven Design) ya que esto nos facilitará su uso al utilizar un lenguaje cercano a nuestro lenguaje cotidiano.
+
+3. **Uso por la comunidad:** El hecho de que una biblioteca de aserciones sea utilizada puede indicar que es útil para la comunidad y que su funcionamiento es correcto. En este sentido, el que una herramienta tenga muchas descargas y buena puntuación en snyk podríamos considerarlo como un indicativo de su uso.
+
+
+## chai
+
+- Hace uso tanto de BDD (Behavior Driven Developement) como de TDD (Test Driven Developement), lo que facilita su uso.
+- Como se puede ver en [open base](https://openbase.com/js/chai), su popularidad es alta teniendo 6 millones de descargas en la semana del 16 de enero de 2023.
+- Tiene un matenimiento constante. Su último commit según [snyk](https://snyk.io/advisor/npm-package/chai) fué hace 2 meses y su última versión se subió hace 3.
+- Su puntuación en snyk es de 100/100 por lo que podríamos decir que tiene un funcionamiento correcto.
+
+
+## unexpected
+
+- Hace uso de BDD lo que facilita su uso.
+- Según [open base](https://openbase.com/js/unexpected), tiene una popularidad bastante más baja que el ya mencionado anteriormente. En este caso, en la última semana solo ha tenido 13.000 descargas.
+- En cuanto a su mantenimiento podemos decir que es constante ya que según [snyk](https://snyk.io/advisor/npm-package/unexpected) su último commmit al igual que su última versión se subieron hace 1 mes.
+- Su puntuación en snyk es de un 81/100, ya que se muestra en la propia página, tanto su popularidad como su comunidad no son tan fuertes como por ejemplo los de chai.
   
-- Descarto **jasmine** ya que su mantenimiento no es tan constante como el resto (hace 3 meses que no se actualizó). Además, de los expuestos es el menos recomendado por la comunidad ya que hace uso de una sintaxis muy compleja.
+
+## expect.js
+
+- Hace uso de BDD, es decir, su lenguaje va a ser cercano al cotidiano lo que nos facilitará su uso.
+- Su mantenimiento también es constante, su último commit a su repositorio de [GitHub](https://github.com/Automattic/expect.js) fue hace 3 semanas.
+- Según [open base](https://openbase.com/js/expect.js), tuvo 93.000 descargas en la semana del 16 de enero de este mismo año.
+- Su puntuación en snyk es muy baja, 55/100. Esto se debe en parte a su falta de apoyo por la comunidad y a algunos problemas de seguridad.
+
+
+# ELECCIÓN
+
+Una vez expuestos los criterios de los test y de las bibliotecas de aserciones,  
+
+- Ya que las tres bibliotecas expuestas hacen uso de BDD y tienen un mantenimiento más o menos constante, decido descartar **unexpected** y **expect.js** ya que son menos usadas que **chai** teniendo millones de descargas menos por semana. Además teniendo en cuenta su valoración en snyk, tanto expect.js como unexpected tiene una puntuación más baja que la de chai.
+
+- Por ello, me decanto por la biblioteca **chai** ya que además de tener actualizaciones recientes, hace uso de una sintaxis simple y es muy usada por la comunidad de node.js.
+
+- Descarto el test **cypress** ya que aunque es de los más usados por la comunidad, su uso se restringe a muy pocos navegadores lo que podría limitar el desarrollo del proyecto.
+  
+- Descarto el test **jasmine** ya que su mantenimiento no es tan constante como el resto (hace 3 meses que no se actualizó). Además, de los expuestos es el menos recomendado por la comunidad ya que hace uso de una sintaxis muy compleja.
   
 - Entre **mocha** y **jest**, ambos son los dos test runners más utilizados por la comunidad de JavaScript (como se puede ver aquí, [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/)), satisfaciendo el criterio **Compatibilidad**. Dado que ambos podrían adaptarse correctamente a mi proyecto finalmente he decidido decantarme por `jest` ya que:
   
@@ -107,10 +148,13 @@ Una vez expuestos los criterios y los test,
   * Considerando el criterio **Velocidad**, podemos ver que jest más rápido al tener una ejecución en paralelo de los tests como se muestra por ejemplo en [lambdatest](https://www.lambdatest.com/blog/best-javascript-unit-testing-frameworks/) donde se indica que cuando Airbnb cambió de Mocha a Jest, se produjo una reducción en el tiempo de ejecución de la prueba de 12 minutos a 4,5 minutos. Todo esto hace que el test runner tenga un alto rendimiento ([lambdatest: best javascript testing frameworks](https://www.lambdatest.com/blog/best-javascript-unit-testing-frameworks/)),
   
   * Otro aspecto relacionado con el criterio **Uso por la comunidad** es que el porcentaje de satisfacción de los usuarios que han usado jest es del 90% según [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/) esto se puede deber al hecho de que jest está muy bien documentado.
+
+En resumen, usaré como test runner **jest** y como biblioteca de aserciones **chai**.
   
 
 ### ENLACES RELEVANTES
 
+## PARA LOS TEST RUNNERS
 
 - [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/): que ofrece comparaciones sobre el uso actual y la opinión de los usuarios de todos los test runners.
 - [snyk](https://snyk.io/advisor/): de esta página he obtenido información sobre las actualizaciones y el estado de los tests.
@@ -124,3 +168,10 @@ Páginas oficiales de los diferentes tests:
 * [Mocha](https://mochajs.org/)
 * [Jasmine](https://jasmine.github.io/)
 * [cypress](https://github.com/cypress-io/cypress)
+
+## PARA LAS BIBLIOTECAS
+
+- [Open Base](https://openbase.com/categories/js/highest-rated-javascript-assertion-libraries?vs=webdriverio%2Ctape%2Cmocha)
+- [Snyk](https://snyk.io/advisor/)
+- [Página Oficial de Chai](https://www.chaijs.com/)
+- [Página Oficial de Unexpected](https://unexpected.js.org/)
