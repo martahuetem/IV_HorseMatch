@@ -18,11 +18,7 @@ La elección del test runner esta basada en la información extraída de varias 
 
 - Es un testing framework de JavaScript destinado a probar aplicaciones que se ejecutan con Node.js.
 - Es de código abierto y proporciona flexibilidad.
-- Al ser un test que lleva muchos años en el mercado, hay muchos tutoriales y documentación que explican su uso y como solucionar sus problemas.
-- Ofrece posibilidades prácticamente infinitas para la configuración e integración avanzadas, lo que permite lograr el entorno de prueba perfecto para un determinado proyecto.
-- Puede testear tanto código síncrono como código asíncrono.
-- Hace uso de una sintaxis simple, es decir, sin necesidad de tener conocimientos avanzados sobre el test runner podemos lograr de entender los que estamos testeando.
-- Tiene métodos que se ejecutan en un orden particular, registrando los resultados en una ventana de terminal separada. También borra el estado del software que se está probando para garantizar que los casos de prueba se ejecuten de forma aislada.
+- Al ser un test que lleva muchos años en el mercado, hay muchos tutoriales y documentación que explican su uso y como solucionar sus problemas lo que fomenta su uso por la comunidad.
 - En cuanto al mantenimiento, mocha tiene actualizaciones frecuentes. Según [snyk](https://snyk.io/advisor/npm-package/mocha), tanto su último commit como su última versión fueron subidas hace 2 meses.
 - Relativo al uso en la comunidad, podemos ver en [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/), que mocha volvería a ser usado solamente por un 44% de los usuarios de node.js. Consta de 8 millones de descargas semanales.
 
@@ -38,10 +34,6 @@ La elección del test runner esta basada en la información extraída de varias 
 **VENTAJAS**
 
 - Cypress se basa en JavaScript.
-- Hace uso de Mocha como proveedor de estructura de test, esto hace que su uso sea bastante estándar.
-- Toma una instantánea en cada paso de la prueba. Esto permite que se pueda verificar el estado y la actividad en cualquier paso del test.
-- Los test se ejecutan dentro del navegador y tienen una visibilidad completa de todo lo que sucede en la aplicación de forma sincrónica.
-- Una vez termina el test, se puede depurar viendo los errores cometidos.
 - En cuanto al mantenimiento, mocha tiene actualizaciones frecuentes. Según [snyk](https://snyk.io/advisor/npm-package/cypress), su último commit se subió hace 12 horas y su última versión hace 16 horas.
 - Puede ejecutar sus test en paralelo, lo que proporciona mayor velocidad a sus ejecuciones.
 - Según se puede ver en [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/), cypress volvería a ser utilizado por un 42% de los usuarios de node.js. Además, tiene 4 millones de descargas semanales según [snyk](https://snyk.io/advisor/npm-package/cypress.
@@ -49,7 +41,6 @@ La elección del test runner esta basada en la información extraída de varias 
 
 **INCONVENIENTES**
 
-- Necesitas tener instalado mocha para poder instalar cypress.
 - Solo es compatible con Chrome, Firefox, Edge, Brave, y Electron.
 
 
@@ -58,11 +49,9 @@ La elección del test runner esta basada en la información extraída de varias 
 **VENTAJAS**
 
 - Jest se usa para probar códigos JavaScript.
-- Proporciona un framework integrado que no requiere ninguna experiencia para su configuración.
 - En cuanto al mantenimiento(freshness), jest está en contante actualización para mejorar. En [snyk](https://snyk.io/advisor/npm-package/jest), podemos ver que su último commit ha sido hace 21 horas y su última versión fue subida hace 8 días.
-- Dado que es un test que lleva muchos años en el mercado, tiene una gran cantidad de foros, documentaciones y tutoriales sobre su uso.
-- Tiene un soporte de simulación y una biblioteca de aserciones propia lo que simplifica su configuración. Esta biblioteca de aserciones hace uso de BDD lo que facilita su uso y compresión.
-- Jest ofrece herramientas sólidas para desarrolladores con un código menos propenso a errores según [lambdatest: top javascript automation testing frameworks](https://www.lambdatest.com/blog/top-javascript-automation-testing-framework/).
+- Dado que es un test que lleva muchos años en el mercado, tiene una gran cantidad de foros, documentaciones y tutoriales sobre su uso lo que fomenta su uso por la comunidad.
+- Jest ofrece herramientas sólidas para desarrolladores con un código menos propenso a errores según [lambdatest: top javascript automation testing frameworks](https://www.lambdatest.com/blog/top-javascript-automation-testing-framework/) gracias a sus constantes actualizaciones.
 - Jest incorpora la ejecución paralela de tests, que ejecuta primero los tests más lentos y continúa de manera descendente. Esto ahorra mucho tiempo. 
 - Fue creado y es mantenido por Facebook, lo que nos garantiza calidad y confianza. Es utilizado por compañías como Twitter, Instagram, The New York Times, Spotify y el propio Facebook.
 - Jest promete un gran rendimiento incluso para proyectos más grandes que requieren implementación y pruebas diarias según [lambdatest: best javascript testing frameworks](https://www.lambdatest.com/blog/best-javascript-unit-testing-frameworks/)
@@ -71,7 +60,6 @@ La elección del test runner esta basada en la información extraída de varias 
 
 **INCONVENIENTES**
 
-- En comparación con otros frameworks, como Jasmine, no admite tantas bibliotecas o herramientas que a veces pueden ser muy útiles para depurar sus tests.
 - En algunos casos, puede resultar más lento que otros tests runners.
 
 
@@ -79,18 +67,14 @@ La elección del test runner esta basada en la información extraída de varias 
 
 **VENTAJAS**
 
-- Es un testing de JavaScript de código abierto y que hace uso de la herramienta BDD.
-- Su mayor ventaja es su compatibilidad con todos los frameworks o bibliotecas, lo que lo convierte en uno de los frameworks de JavaScript más flexibles.
-- Tiene una comunidad bastante grande por lo que podemos encontrar mucha información sobre su uso.
-- Jasmine puede probar tanto el código frontend como el backend, lo cual es una gran ventaja.
+- Es un testing de JavaScript.
+- Tiene una comunidad bastante grande por lo que podemos encontrar mucha información sobre su uso lo que fomenta su uso por parte de la comunidad.
 - Permite la ejecución en paralelo lo que hace a dicha ejecución más rápida.
 - Según [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/), jasmine volvería a ser usado por el 33% de los usuarios de node.js, un porcentaje bastante inferior al de los tests anteriores. Sus descargas semanales son de 1 millon, una cifra bastante menor que la de jest y mocha.
 
 **INCONVENIENTES**
 
-- Su instalación es bastante compleja.
-- No trae su propia biblioteca de aserciones por lo que antes de usarlo habría que elegir una.
-- Una de sus mayores quejas es la sintaxis que utiliza ya que es dificil de comprender.
+- Una de sus mayores quejas es la sintaxis que utiliza ya que es dificil de comprender lo que hace que no tenga tantos usuarios.
 - Su mantenimiento no es tan constante como los test expuestos anteriormente. Como se puede ver en [snyk](https://snyk.io/advisor/npm-package/jasmine), su último commit y su última actualización fueron hace tres meses.
 
 
