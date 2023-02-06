@@ -113,7 +113,6 @@ Páginas oficiales de los diferentes tests:
 - [Jest](https://jestjs.io/es-ES/)
 * [Mocha](https://mochajs.org/)
 * [Jasmine](https://jasmine.github.io/)
-* [cypress](https://github.com/cypress-io/cypress)
 
 ## PARA LAS BIBLIOTECAS
 
