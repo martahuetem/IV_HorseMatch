@@ -135,7 +135,7 @@ Con respecto a los test runners,
   
   * Otro aspecto relacionado con el criterio **Uso por la comunidad** es que el porcentaje de satisfacción de los usuarios que han usado jest es del 90% según [State of JS: Testing](https://2022.stateofjs.com/en-US/libraries/testing/) esto se puede deber al hecho de que jest está muy bien documentado.
 
-En resumen, usaré como test runner **jest** y como biblioteca de aserciones **chai**.
+En resumen, lo que más se adapta a mi proyecto es el uso del test runner **jest** y de la biblioteca de aserciones **chai**.
   
 
 ### ENLACES RELEVANTES
