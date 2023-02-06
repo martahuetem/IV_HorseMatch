@@ -3,11 +3,10 @@ const Jinete = require("./jinete")
 const ExcepcionNumeroJinetesCaballos = require("../src/excepciones.js");
 
 
-class asignacionParejas{
+class emparejamiento{
       /**
-     * Constructor clase caballo
+     * Constructor clase emparejamiento
      * @param {Array<Array>} matriz_costos Matriz de costos
-     * @param {Number} nusuarios Numero de usuarios
      */
       constructor(matriz_costos){
 
@@ -114,21 +113,6 @@ class asignacionParejas{
         return this.parejas
       }
 
-
-}
-
-
-/**
- * Método que pretende buscar el emparejamiento óptimo de caballos y jinetes. 
- * @param {Array<Array>} matriz Matriz de costos
- * @returns {Map} Binomios (pareja de jinete, caballo) generados
- */
-
-function emparejamiento(matriz) {
-
-  let binomios = new asignacionParejas(matriz)
-
-  return binomios.crearParejas()
 
 }
 
