@@ -77,13 +77,14 @@ let binomio = new Map()
 
 
 // TESTS //
-
+const { expect } = require("chai");
 describe("Pruebas de corrección", () => {
+
 
     test('Los costos de la matriz deben de ser mayores o iguales que 1', () => {
         //Compruebo que todos los costes de la matriz son mayores o iguales a 1
         let matriz_valida = comprobarMatriz(matriz)
-        expect(matriz_valida).toBeFalsy()
+        expect(matriz_valida).to.be.false
     });
 
     test('Asignación correcta de los binomios (caballo, jinete)', () => {
@@ -100,11 +101,13 @@ describe("Pruebas de corrección", () => {
 
         const caballos_asignados = [0, 1, 0, 0]
 
+        let tanda = new emparejamiento(matriz)
+
         let res = []
 
         //Compruebo la excepción
         try {
-            res = emparejamiento(matriz)
+            res = tanda.crearParejas()
         } catch (excepcion) {
             if (excepcion instanceof ExcepcionNumeroJinetesCaballos) {
                 return excepcion.mensaje
@@ -134,7 +137,7 @@ describe("Pruebas de corrección", () => {
         let costo = costoEmparejamiento(matriz, res)
 
         //Compruebo que el costo sea igual ya que a mismo costo, puede haber varias opciones diferentes
-        expect(costo).toEqual(costo_esperado)
+        expect(costo).to.equal(costo_esperado)
         //expect(binomio).toEqual(resultado_esperado);
 
     });
@@ -146,7 +149,7 @@ describe("Pruebas de corrección", () => {
 
         let caballoLaura = obj.Laura
 
-        expect(caballoLaura).toEqual(binomioLaura)
+        expect(caballoLaura).to.equal(binomioLaura)
     });
 });
 
