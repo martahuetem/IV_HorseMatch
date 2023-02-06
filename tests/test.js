@@ -22,57 +22,60 @@ function comprobarMatriz(matriz, nfil, ncol) {
     return menor_que_uno
 }
 
+//Creo unos caballos ejemplo
+const horses = []
+
+const nombres = ["A", "B", "C", "D"];
+const niveles = [Nivel.Alto, Nivel.MedioAlto, Nivel.Medio, Nivel.Bajo];
+
+for (let i = 0; i < nombres.length; i++) {
+    horses.push(new Caballo(nombres[i], niveles[i]));
+}
 
 
- //Creo unos caballos ejemplo
- let horses = [
-    new Caballo("A", Nivel.Alto),
-    new Caballo("B", Nivel.MedioAlto),
-    new Caballo("C", Nivel.Medio),
-    new Caballo("D", Nivel.Bajo)
- ]
+//Creo las preferencias de los alumnos a los caballos
+const preferenciaMarta = [
+    new Map([[horses[0], Preferencia.Gusta]]),
+    new Map([[horses[1], Preferencia.Gusta]]),
+    new Map([[horses[2], Preferencia.NoGusta]]),
+    new Map([[horses[3], Preferencia.NoGusta]]),
+];
 
- //Creo las preferencias de los alumnos a los caballos
- let pref_marta = [
-     new Map([[horses[0], Preferencia.Gusta]]),
-     new Map([[horses[1], Preferencia.Gusta]]),
-     new Map([[horses[2], Preferencia.NoGusta]]),
-     new Map([[horses[3], Preferencia.NoGusta]]),
- ];
+const preferenciaCarlos = [
+    new Map([[horses[0], Preferencia.NoGusta]]),
+    new Map([[horses[1], Preferencia.Gusta]]),
+    new Map([[horses[2], Preferencia.Gusta]]),
+    new Map([[horses[3], Preferencia.NoGusta]]),
+];
 
- let pref_carlos = [
-     new Map([[horses[0], Preferencia.NoGusta]]),
-     new Map([[horses[1], Preferencia.Gusta]]),
-     new Map([[horses[2], Preferencia.Gusta]]),
-     new Map([[horses[3], Preferencia.NoGusta]]),
- ];
+const preferenciaPaco = [
+    new Map([[horses[0], Preferencia.NoGusta]]),
+    new Map([[horses[1], Preferencia.NoGusta]]),
+    new Map([[horses[2], Preferencia.Gusta]]),
+    new Map([[horses[3], Preferencia.NoGusta]]),
+];
 
- let pref_paco = [
-     new Map([[horses[0], Preferencia.NoGusta]]),
-     new Map([[horses[1], Preferencia.NoGusta]]),
-     new Map([[horses[2], Preferencia.Gusta]]),
-     new Map([[horses[3], Preferencia.NoGusta]]),
- ];
-
- let pref_alberto = [
-     new Map([[horses[0], Preferencia.NoGusta]]),
-     new Map([[horses[1], Preferencia.NoGusta]]),
-     new Map([[horses[2], Preferencia.NoGusta]]),
-     new Map([[horses[3], Preferencia.Gusta]]),
- ];
+const preferenciaLaura = [
+    new Map([[horses[0], Preferencia.NoGusta]]),
+    new Map([[horses[1], Preferencia.NoGusta]]),
+    new Map([[horses[2], Preferencia.NoGusta]]),
+    new Map([[horses[3], Preferencia.Gusta]]),
+];
 
 
- let jinetes = [
-    new Jinete("Marta", Nivel.Alto, pref_marta),
-    new Jinete("Carlos", Nivel.MedioAlto, pref_carlos),
-    new Jinete("Paco", Nivel.Medio, pref_paco),
-    new Jinete("Alberto", Nivel.Bajo, pref_alberto)
- ]
+let jinetes = [
+    new Jinete("Marta", Nivel.Alto, preferenciaMarta),
+    new Jinete("Carlos", Nivel.MedioAlto, preferenciaCarlos),
+    new Jinete("Paco", Nivel.Medio, preferenciaPaco),
+    new Jinete("Laura", Nivel.Bajo, preferenciaLaura)
+]
 
 
- let matriz = crearMatrizCosto(jinetes, horses)
+let matriz = crearMatrizCosto(jinetes, horses)
 
- 
+let binomio = new Map()
+
+
 // TESTS //
 
 describe("Pruebas de corrección", () => {
@@ -89,7 +92,7 @@ describe("Pruebas de corrección", () => {
         const resultado_esperado = new Map([
             ["Marta", "A"],
             ["Carlos", "B"],
-            ["Alberto", "D"],
+            ["Laura", "D"],
             ["Paco", "C"]
         ]);
 
@@ -100,14 +103,14 @@ describe("Pruebas de corrección", () => {
         let res = []
 
         //Compruebo la excepción
-        try{
+        try {
             res = emparejamiento(matriz)
-        } catch (excepcion){
-            if(excepcion instanceof ExcepcionNumeroJinetesCaballos){
+        } catch (excepcion) {
+            if (excepcion instanceof ExcepcionNumeroJinetesCaballos) {
                 return excepcion.mensaje
             }
         }
-    
+
         let riders = new Array(jinetes.length)
         let chevals = new Array(horses.length)
 
@@ -122,8 +125,6 @@ describe("Pruebas de corrección", () => {
         let pos_jinete = 0
         let pos_caballo = 0
 
-        let binomio = new Map()
-
         for (let i = 0; i < jinetes.length; i++) {
             pos_jinete = riders[i]
             pos_caballo = chevals[i]
@@ -136,6 +137,16 @@ describe("Pruebas de corrección", () => {
         expect(costo).toEqual(costo_esperado)
         //expect(binomio).toEqual(resultado_esperado);
 
+    });
+
+    test('A Laura le ha tocado el caballo "D" que no le da miedo ya que se adpata a su nivel', () => {
+        const binomioLaura = "D"
+
+        let obj = Object.fromEntries(binomio.entries())
+
+        let caballoLaura = obj.Laura
+
+        expect(caballoLaura).toEqual(binomioLaura)
     });
 });
 
