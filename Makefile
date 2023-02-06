@@ -1,6 +1,10 @@
 files = $(shell ls ./src/*.js)
 
-all: check
+all: 
+	check
 
 check:
 	$(foreach file, $(files), node --check $(file);)
+
+test: 
+	npx jest 
