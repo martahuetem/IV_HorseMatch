@@ -83,7 +83,7 @@ Los criterios de selección para las bibliotecas de aserciones son:
 
 Una vez expuestos los criterios de los test y de las bibliotecas de aserciones,  
 
-- Ya que las tres bibliotecas expuestas hacen uso de BDD y tienen un mantenimiento más o menos constante. Sin embargo, me decanto por la biblioteca **chai** ya que además de tener actualizaciones recientes y hace uso de una sintaxis simple.
+- Ya que las tres bibliotecas expuestas hacen uso de BDD y tienen un mantenimiento más o menos constante. Sin embargo, me decanto por la biblioteca **chai** ya que además de tener actualizaciones recientes hace uso de una sintaxis simple.
 
 Con respecto a los test runners, 
   
