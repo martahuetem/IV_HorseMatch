@@ -1,4 +1,4 @@
-En este documento, presentaré tanto los criterios para la elección del test runner y de la biblioteca de aserciones como una breve exposición de los test runners y las bibliotecas de aserciones a tener en cuenta:
+En este documento, presentaré tanto los criterios para la elección del test runner y de la biblioteca de aserciones como una breve exposición de los test runners y las bibliotecas de aserciones a tener en cuenta. Finalmente presentaré las herramientas elegidas junto al porque de dicha elección.
 
 # TEST RUNNER
 
@@ -136,6 +136,8 @@ Una vez expuestos los criterios de los test y de las bibliotecas de aserciones,
 - Ya que las tres bibliotecas expuestas hacen uso de BDD y tienen un mantenimiento más o menos constante, decido descartar **unexpected** y **expect.js** ya que son menos usadas que **chai** teniendo millones de descargas menos por semana. Además teniendo en cuenta su valoración en snyk, tanto expect.js como unexpected tiene una puntuación más baja que la de chai.
 
 - Por ello, me decanto por la biblioteca **chai** ya que además de tener actualizaciones recientes, hace uso de una sintaxis simple y es muy usada por la comunidad de node.js.
+
+Con respecto a los test runners, 
 
 - Descarto el test **cypress** ya que aunque es de los más usados por la comunidad, su uso se restringe a muy pocos navegadores lo que podría limitar el desarrollo del proyecto.
   
